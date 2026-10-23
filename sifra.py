@@ -3,9 +3,9 @@ POSUN = 3
 def zasifruj(text, posun=POSUN):
     vysledek = ""
     for znak in text:
-        vysledek += chr(ord(znak) + posun)
+        poradi = ord(znak) - ord("a")
+        vysledek += chr((poradi + posun) % 26 + ord("a"))
     return vysledek
-
 
 
 def desifruj(text, posun):
