@@ -6,12 +6,15 @@ def zasifruj(text, posun):
 def desifruj(text, posun):
     vysledek = ""
     for znak in text:
-        nova_hodnota = ord(znak) - posun
-        # Pokud jsme se dostali před 'a', skočíme na konec abecedy
-        if nova_hodnota < ord('a'):
-            nova_hodnota += 26
-        
-        vysledek += chr(nova_hodnota)
+        # Zpracujeme pouze malá písmena (a-z)
+        if 'a' <= znak <= 'z':
+            nova_hodnota = ord(znak) - posun
+            if nova_hodnota < ord('a'):
+                nova_hodnota += 26
+            vysledek += chr(nova_hodnota)
+        else:
+            # Ostatní znaky necháme beze změny
+            vysledek += znak
     return vysledek
 
 
