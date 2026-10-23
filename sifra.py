@@ -6,8 +6,12 @@ def zasifruj(text, posun):
 def desifruj(text, posun):
     vysledek = ""
     for znak in text:
-        # Převedeme znak na číslo, odečteme posun a vrátíme zpět na znak
-        vysledek += chr(ord(znak) - posun)
+        nova_hodnota = ord(znak) - posun
+        # Pokud jsme se dostali před 'a', skočíme na konec abecedy
+        if nova_hodnota < ord('a'):
+            nova_hodnota += 26
+        
+        vysledek += chr(nova_hodnota)
     return vysledek
 
 
