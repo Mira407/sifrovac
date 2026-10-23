@@ -1,7 +1,4 @@
-POSUN = 3
-
-
-def zasifruj(text, posun=POSUN):
+def zasifruj(text, posun):
     vysledek = ""
     for znak in text:
         if "a" <= znak <= "z":
