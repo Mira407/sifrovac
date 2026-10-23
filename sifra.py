@@ -4,8 +4,11 @@ def zasifruj(text, posun):
 
 
 def desifruj(text, posun):
-    # TODO (B): posuň každé písmeno o 'posun' míst dozadu
-    return text
+    vysledek = ""
+    for znak in text:
+        # Převedeme znak na číslo, odečteme posun a vrátíme zpět na znak
+        vysledek += chr(ord(znak) - posun)
+    return vysledek
 
 
 zprava = "ahoj svete"
