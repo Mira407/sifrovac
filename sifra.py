@@ -1,6 +1,11 @@
-def zasifruj(text, posun):
-    # TODO (A): posuň každé písmeno o 'posun' míst dopředu
-    return text
+POSUN = 3
+
+def zasifruj(text, posun=POSUN):
+    vysledek = ""
+    for znak in text:
+        vysledek += chr(ord(znak) + posun)
+    return vysledek
+
 
 
 def desifruj(text, posun):
