@@ -12,8 +12,18 @@ def zasifruj(text, posun=POSUN):
     return vysledek
 
 def desifruj(text, posun):
-    # TODO (B): posuň každé písmeno o 'posun' míst dozadu
-    return text
+    vysledek = ""
+    for znak in text:
+        # Zpracujeme pouze malá písmena (a-z)
+        if 'a' <= znak <= 'z':
+            nova_hodnota = ord(znak) - posun
+            if nova_hodnota < ord('a'):
+                nova_hodnota += 26
+            vysledek += chr(nova_hodnota)
+        else:
+            # Ostatní znaky necháme beze změny
+            vysledek += znak
+    return vysledek
 
 
 zprava = "ahoj svee"
